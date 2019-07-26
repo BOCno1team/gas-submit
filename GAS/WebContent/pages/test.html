@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>test</title>
+    <script src="../js/jquery.js"></script>
+</head>
+<body>
+<div id=testId>123</div>
+<button onclick="submit()">submit</button>
+    <table border="1" width="60%" bgcolor="#e9faff" cellpadding="2">
+        <caption>课程表</caption>
+        <tr align="center">
+            <td colspan="2">时间\日期</td>
+            <td>一</td>
+            <td>二</td>
+            <td>三</td>
+            <td>四</td>
+            <td>五</td>
+        </tr>
+
+        <tr align="center">
+            <td rowspan="2">上午</td>
+            <td>9:30-10:15</td>
+            <td>语文</td>
+            <td>语文</td>
+            <td>语文</td>
+            <td>语文</td>
+            <td>语文</td>
+        </tr>
+
+        <tr align="center">
+            <td>10:25-11:10</td>
+            <td>语文</td>
+            <td>语文</td>
+            <td>语文</td>
+            <td>语文</td>
+            <td>语文</td>
+        </tr>
+
+        <tr>
+            <td colspan="7">&nbsp;</td>
+        </tr>
+
+        <tr align="center">
+            <td rowspan="2">下午</td>
+            <td>14:30-15:15</td>
+            <td>语文</td>
+            <td>语文</td>
+            <td>语文</td>
+            <td>语文</td>
+            <td>语文</td>
+        </tr>
+
+        <tr align="center">
+            <td>15:25-16:10</td>
+            <td>语文</td>
+            <td>语文</td>
+            <td>语文</td>
+            <td>语文</td>
+            <td>语文</td>
+        </tr>
+    </table>
+</body>
+<script type="text/javascript">
+//点击ssubmit按钮时，触发“<button onclick="submit()">submit</button>”中的submit()函数
+	function submit(){
+	//获取id为“testId”的div的内容
+		var content = document.getElementById("testId").innerHTML;
+	//设定向后台传递的具体内容，格式为JSON
+		var jsonData = {};
+	//设置json内容：id:content
+		jsonData['id'] = content;
+		$.ajax({
+	///CallForCode是固定的，/hello对应的是 后台处理类 urlPatterns = { "/HelloServlet" }          
+			  url : "/CallForCode/HelloServlet",//请求地址//传递参数
+	          dataType : "json",//数据格式
+	          type : "post",//请求方式
+	          async : true,//是否异步请求
+	          data : JSON.stringify(jsonData),
+	          success : function(result) { 
+	//返回内容也是json格式的，
+	               console.log(result);
+	               console.log(result.res);
+	           },
+	           error : function(msg){
+	        	   document.write(msg.responseText);
+	           }
+	     })
+	}
+</script>
+</html>

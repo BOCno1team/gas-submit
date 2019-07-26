@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/j2ee" xmlns:web="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd" version="2.4">
+  <welcome-file-list>
+    <welcome-file>index.html</welcome-file>
+  </welcome-file-list>
+  <servlet>
+    <description>supply</description>
+    <display-name>HelloServlet</display-name>
+    <servlet-name>HelloServlet</servlet-name>
+    <servlet-class>web.connection.HelloServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>HelloServlet</servlet-name>
+    <url-pattern>/HelloServlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description>demand</description>
+    <display-name>DemandServlet</display-name>
+    <servlet-name>DemandServlet</servlet-name>
+    <servlet-class>web.connection.DemandServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>DemandServlet</servlet-name>
+    <url-pattern>/DemandServlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description>matchresult</description>
+    <display-name>MatchResultServlet</display-name>
+    <servlet-name>MatchResultServlet</servlet-name>
+    <servlet-class>web.connection.MatchResultServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>MatchResultServlet</servlet-name>
+    <url-pattern>/MatchResultServlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description>comment</description>
+    <display-name>CommentServlet</display-name>
+    <servlet-name>CommentServlet</servlet-name>
+    <servlet-class>web.connection.CommentServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>CommentServlet</servlet-name>
+    <url-pattern>/CommentServlet</url-pattern>
+  </servlet-mapping>
+</web-app>
