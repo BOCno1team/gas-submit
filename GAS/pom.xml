@@ -36,7 +36,7 @@
 	</build>
     <properties>
         <grpc.version>1.20.0</grpc.version><!-- CURRENT_GRPC_VERSION -->
-        <protobuf.version>3.7.1</protobuf.version>
+        <protobuf.version>3.16.1</protobuf.version>
         <bouncycastle.version>1.61</bouncycastle.version>
         <httpclient.version>4.5.8</httpclient.version>
         <javadoc.version>3.0.1</javadoc.version>
